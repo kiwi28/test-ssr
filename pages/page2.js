@@ -13,13 +13,15 @@ const fetchData = async () =>
       users: null,
     }));
 
-const Home = ({ users, error }) => {
+const Page2 = ({ users, error }) => {
   console.log("users din componenta: ", users);
+
   return (
     <section>
       <Header />
+
       <header>
-        <h1>Home</h1>
+        <h1>Page2</h1>
       </header>
       {error && <div>There was an error.</div>}
       {!error && users && (
@@ -44,13 +46,13 @@ const Home = ({ users, error }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const data = await fetchData();
-  console.log("data din getServerSideProps: ", data);
+  console.log("data din getStaticProps: ", data);
 
   return {
     props: data,
   };
 };
 
-export default Home;
+export default Page2;
