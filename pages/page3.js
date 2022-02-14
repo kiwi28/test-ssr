@@ -14,14 +14,14 @@ const fetchData = async () =>
     }));
 
 const Page2 = ({ users, error }) => {
-  console.log("users din componenta (getStatic): ", users);
+  console.log("users din componenta (getInitialProps): ", users);
 
   return (
     <section>
       <Header />
 
       <header>
-        <h1>Page2</h1>
+        <h1>Page3</h1>
       </header>
       {error && <div>There was an error.</div>}
       {!error && users && (
@@ -46,9 +46,9 @@ const Page2 = ({ users, error }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getInitialProps = async () => {
   const data = await fetchData();
-  console.log("data din getStaticProps: ", data);
+  console.log("data din getInitialProps: ", data);
 
   return {
     props: data,

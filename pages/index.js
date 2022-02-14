@@ -14,7 +14,7 @@ const fetchData = async () =>
     }));
 
 const Home = ({ users, error }) => {
-  console.log("users din componenta: ", users);
+  console.log("users din componenta(getServer): ", users);
   return (
     <section>
       <Header />
